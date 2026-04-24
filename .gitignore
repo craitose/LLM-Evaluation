@@ -1,0 +1,9 @@
+# Credentials
+.env
+score.csv
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
