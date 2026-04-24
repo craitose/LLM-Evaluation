@@ -1,18 +1,38 @@
+import os
 from datasets import Dataset
-
+from dotenv import load_dotenv
 from openai import AsyncOpenAI
 from ragas import evaluate, RunConfig
 from ragas.llms import llm_factory
 from ragas.embeddings.base import embedding_factory
 from ragas.metrics import _faithfulness, _answer_correctness
 
-run_config = RunConfig(max_workers=1)
+load_dotenv()
+run_config = RunConfig(max_workers=1, timeout=60)
 
-client = AsyncOpenAI(api_key=("sk-XXXXXXXXXXXXXXXX"))
+# TOGGLE THIS: 'openai' or 'local'
+MODE = "local"
 
-# Ragas uses these under the hood, but explicit wrapping solves the type mismatch
-ragas_llm = llm_factory(model="gpt-4o", client=client)
-ragas_emb = embedding_factory("openai", model="text-embedding-3-small", client=client)
+if MODE == "openai":
+    client = AsyncOpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    ragas_llm = llm_factory(model="gpt-4o", client=client)
+    ragas_emb = embedding_factory(
+        "openai", model="text-embedding-3-small", client=client
+    )
+else:
+    # For Local Llama via Ollama
+
+    local_client = AsyncOpenAI(
+        base_url="http://localhost:11434/v1",
+        api_key="ollama",  # Ollama doesn't need a real key, but the client requires a string
+    )
+    local_model = (
+        "qwen2.5:3b"  # Ensure this matches the model name in your Ollama setup
+    )
+    ragas_llm = llm_factory(model=local_model, client=local_client)
+    ragas_emb = embedding_factory(
+        provider="openai", model=local_model, client=local_client
+    )
 
 
 data_samples = {

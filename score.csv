@@ -1,4 +1,4 @@
 user_input,retrieved_contexts,response,reference,faithfulness,answer_correctness
-What is the capital of France?,"['Paris is the capital city of France, known for its art, culture, and history.']",The capital of France is Paris.,Paris,1.0,0.8614893225780108
-Who is the president of the United States?,"['Joe Biden is the 46th president of the United States, serving since January 20, 2021.']",The president of the United States is Joe Biden.,Joe Biden,1.0,0.9059449919480518
-What is the largest mammal?,"['The blue whale is the largest mammal on Earth, reaching lengths of up to 100 feet and weights of up to 200 tons.']",The largest mammal is the blue whale.,Blue whale,1.0,0.9064384619154413
+What is the capital of France?,"['Paris is the capital city of France, known for its art, culture, and history.']",The capital of France is Paris.,Paris,1.0,0.8384886771284369
+Who is the president of the United States?,"['Joe Biden is the 46th president of the United States, serving since January 20, 2021.']",The president of the United States is Joe Biden.,Joe Biden,1.0,0.906455158367683
+What is the largest mammal?,"['The blue whale is the largest mammal on Earth, reaching lengths of up to 100 feet and weights of up to 200 tons.']",The largest mammal is the blue whale.,Blue whale,1.0,0.762245242129781
