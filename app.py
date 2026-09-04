@@ -31,7 +31,7 @@ else:
     )
     ragas_llm = llm_factory(model=local_model, client=local_client)
     ragas_emb = embedding_factory(
-        provider="openai", model=local_model, client=local_client
+        provider="openai", model="nomic-embed-text", client=local_client
     )
 
 
