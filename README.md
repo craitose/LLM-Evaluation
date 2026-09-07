@@ -23,9 +23,9 @@ OpenAI API Key (for cloud evaluation).
 ## Installation
 1.Clone the repository:
 
-git clone https://github.com/craitose/LLM-Evaluation.git
+git clone https://github.com/craitose/LLM-Evaluation-RAGAS.git
 
-cd LLM-EVALUATION
+cd LLM-EVALUATION-RAGAS
 
 2.Install dependencies:
 
