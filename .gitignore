@@ -1,6 +1,7 @@
 # Credentials
 .env
 score.csv
+.deepeval
 
 # Python
 __pycache__/
